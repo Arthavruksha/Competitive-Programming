@@ -10,7 +10,9 @@ freopen("output.txt", "w", stdout);
 
 
 int main() {
-	OnlineJudge();
+    OnlineJudge();
+
+    // Main code goes in here  
 
     return 0;
 }
