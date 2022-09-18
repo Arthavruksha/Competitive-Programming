@@ -37,6 +37,7 @@ int main() {
 
 			if ( dp[0][i] == '1' and dp[1][i] == '1' ){
 				ans = "NO";
+				break;
 			}
 		}
 
