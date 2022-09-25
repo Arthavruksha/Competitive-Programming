@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long  
 
 void OnlineJudge () {
 #ifndef ONLINE_JUDGE
@@ -8,12 +9,14 @@ freopen("output.txt", "w", stdout);
 #endif
 } 
 
-
 int main() {
-    OnlineJudge();
+	OnlineJudge();
+	ios_base::sync_with_stdio(false); 
+	cin.tie(0);
 
-    // Main code goes in here  
+	// Main Code Goes Here
 
-    return 0;
+
+	return 0;
 }
 
