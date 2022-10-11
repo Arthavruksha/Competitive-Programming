@@ -13,56 +13,35 @@ freopen("output.txt", "w", stdout);
 
 
 void solve() {
-
 	string a,b;
 	cin>>a>>b;
+	int n1 = a.size();
+	int n2 = b.size();
 
-	int firstmax = 0, secondmax= 0 ;
-	int firstxc = 0;
-	int secondxc = 0;
+	map <char, int> rapid;
 
-	for(int i=0;i<a.size();i++) {
+	rapid['S'] = 1;
+	rapid['M'] = 2;
+	rapid['L'] = 3;
 
-		if (a[i] == 'S') firstmax = 1;
-		else if (a[i] == 'L') firstmax = 3;
-		else if (a[i] == 'M') firstmax = 2;
-		else firstxc++;
+	int v1 = rapid[a[n1-1]];
+	int v2 = rapid[b[n2-1]];
 
-	}
-	for(int i=0;i<b.size();i++) {
-
-		if (b[i] == 'S') secondmax = 1;
-		else if (b[i] == 'L') secondmax = 3;
-		else if (b[i] == 'M') secondmax = 2;
-		else secondxc++;
-
-	}
-
-	if (firstmax > secondmax) {
-		cout<<">"<<endl;
-	}
-	else if (secondmax > firstmax) {
-		cout<<"<"<<endl;
-	}
-	else if (firstmax == secondmax) {
-		if (firstmax == 1) {
-			if (firstxc > secondxc) cout<<"<"<<endl;
-			else if (firstxc < secondxc) cout<<">"<<endl;
-			else if (firstxc == secondxc ) cout<<"="<<endl;
+	if (v1 > v2) cout<<">"<<endl;
+	else if (v2 > v1) cout<<"<"<<endl;
+	else {
+		if (v1 == 3) {
+			if (n1 > n2) cout<<">"<<endl;
+			else if (n2> n1) cout<<"<"<<endl;
+			else cout<<"="<<endl;
 		}
-		else if (firstmax == 3) {
-			if (firstxc > secondxc) cout<<">"<<endl;
-			else if (firstxc < secondxc) cout<<"<"<<endl;
-			else if (firstxc == secondxc ) cout<<"="<<endl;			
+		else if (v1 == 1) {
+			if (n1 > n2) cout<<"<"<<endl;
+			else if (n2> n1) cout<<">"<<endl;
+			else cout<<"="<<endl;
 		}
-		else if (firstmax == 2) {
-			if (firstxc > secondxc) cout<<">"<<endl;
-			else if (firstxc < secondxc) cout<<"<"<<endl;
-			else if (firstxc == secondxc ) cout<<"="<<endl;	
-			else cout<<"="<<endl;		
-		}
+		else cout<<"="<<endl;
 	}
-
 
 }
 
